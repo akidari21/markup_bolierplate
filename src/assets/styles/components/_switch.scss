@@ -1,0 +1,53 @@
+// iOS style Switch CSS
+
+.custom-switch {
+  padding: 0;
+  .custom-control-label::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 52px;
+    height: 31px;
+    pointer-events: none;
+    content: "";
+    background-color: #fff;
+    border: $silver solid 1px;
+    transition: all .2s ease;
+  }
+  .custom-control-label::before {
+    left: 0;
+    width: 51px;
+    pointer-events: all;
+    border-radius: 16px;
+  }
+
+  .custom-control-label::after {
+    content: "";
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    display: block;
+    width: 27px;
+    height: 27px;
+    background: no-repeat 50% / 50% 50%;
+    border: 1px solid $silver;
+    box-shadow: 1px 3px 2px 0 rgba(0,0,0,0.1);
+  }
+  .custom-control-label::after {
+    // left: calc(-3.15rem + 2px);
+    // width: calc(2.071rem - 3px);
+    // height: calc(2.071rem - 3px);
+    // width: 28px;
+    // height: 28px;
+    background-color: $white;
+    border-radius: 14px;
+    transition: transform 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  }
+
+  .custom-control-input:checked ~ .custom-control-label::after {
+    border-color: $white;
+    background-color: $white;
+    transform: translateX(1.48rem);
+  }
+}

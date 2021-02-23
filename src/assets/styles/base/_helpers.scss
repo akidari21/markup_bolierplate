@@ -4,3 +4,16 @@
 
 // example:
 // https://github.com/HugoGiraudel/sass-boilerplate/blob/master/stylesheets/base/_helpers.scss
+
+// 두줄 제한 ... 보이기
+.strcut {
+  overflow: hidden; 
+  text-overflow: ellipsis; 
+  display: -webkit-box;
+  -webkit-box-orient: vertical; 
+  word-wrap: break-word;
+  -webkit-line-clamp: 1; /* 라인수 */	
+  &-twoline {
+    -webkit-line-clamp: 2; /* 라인수 */	
+  }
+}

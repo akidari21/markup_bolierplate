@@ -4,3 +4,107 @@
 
 // example:
 // https://github.com/HugoGiraudel/sass-boilerplate/blob/master/stylesheets/abstracts/_mixins.scss
+
+@mixin bg-img($name) {
+  .bg-#{$name} {
+      background-image: url("../images/#{$name}.png");
+  }
+}
+
+@mixin flex-container($direction, $justify, $align:false) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}
+// .main-container {
+//   @include flexContainer(column, center, center);
+// }
+
+
+// 버튼 속성 리셋
+@mixin button-reset($bdrs:8px) {
+  border: 0;
+  border-radius: $bdrs;
+  background-color: none;
+}
+
+// 부모 엘리먼트에 $context class가 있을 경우
+@mixin when-inside($context) {
+  #{$context} & {
+    @content;
+  }
+}
+
+// 이벤트 
+@mixin on-event($self: false) {
+  @if $self {
+    &,
+    &:hover,
+    &:active,
+    &:focus {
+      @content;
+    }
+  } @else {
+    &:hover,
+    &:active,
+    &:focus {
+      @content;
+    }
+  }
+}
+
+// border
+@mixin border-set($px, $type, $color, $pos: false) {
+  @if $pos {
+    border-#{$pos}: $px $type $color;
+  } @else {
+    border: $px $type $color;
+  }
+}
+
+// Box maker
+@mixin box($border-width, $color, $pd, $radius:8px, $bgc:false) {
+  padding: $pd;
+  border: $border-width solid $color;
+  border-radius: $radius;
+  background-color: $bgc;
+}
+
+// text 
+@mixin text($fontSize: 14px, $weight: 500, $color: $charcoal-grey) {
+  font-size: $fontSize;
+  font-weight: $weight;
+  color: $color;
+}
+
+// Mixin itself
+@mixin clearfix() {
+  &::after {
+    display: block;
+    content: "";
+    clear: both;
+  }
+}
+
+// Breadcrumb Arrow
+@mixin step-arrow($direction: false) {
+  &:after {
+    content: '';
+    position: absolute;
+    top: 5px;
+    right: 7px;
+    display: inline-block;
+    width: 9px;
+    height: 9px;
+    border-top: 1px solid $steel;
+    border-right: 1px solid $steel;
+    transform: rotate(45deg);
+    @if $direction == bottom {
+      transform: rotate(135deg);
+    }
+    @if $direction == top {
+      transform: rotate(-45deg);
+    }
+  }
+}

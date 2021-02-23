@@ -3,14 +3,15 @@
 
 // Essential Vendors
 // - external libraries that should be loaded before
-@import '~sass-material-colors';
-@import '~normalize-scss';
+@import "~sass-material-colors";
+@import "~normalize-scss";
 
 // Abstracts
 // - tools and helpers
 @import "abstracts/variables";
 @import "abstracts/functions";
 @import "abstracts/mixins";
+@import "abstracts/animations";
 
 // Vendors
 // - CSS from external libraries and frameworks
@@ -28,6 +29,13 @@
 // Components
 // - for small, reusable pieces
 @import "components/buttons";
+@import "components/chat";
+@import "components/datepicker";
+@import "components/icons";
+@import "components/modal";
+@import "components/spinner";
+@import "components/switch";
+@import "components/tagify";
 
 // Layout
 // - everything that takes part in laying out the site/application

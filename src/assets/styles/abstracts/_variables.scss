@@ -4,6 +4,14 @@
 
 // Colors
 //
+$steel: #333;
+$silver: #ccc;
+$pale-grey: #333;
+$cool-grey: #333;
+$pale-grey-two: #333;
+$pale-grey-three: #333;
+$charcoal-grey: #333;
+$very-light-purple: #0061f2;
 $indigo: #5800e8;
 $purple: #6900c7;
 $orange: #f76400;
@@ -21,24 +29,24 @@ $success: $green !default;
 $danger: $red !default;
 $warning: $yellow !default;
 $info: $cyan !default;
-$light: material-color('grey', '50') !default;
-$dark: material-color('grey', '800') !default;
+$light: material-color("grey", "50") !default;
+$dark: material-color("grey", "800") !default;
 
 // Body
 //
 $body-bg: $light;
-$body-color: material-color('blue-grey', '900');
-
+$body-color: material-color("blue-grey", "900");
 
 // Typography
 //
 
-$font-family-sans-serif: Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+$font-family-sans-serif: Roboto, "Helvetica Neue", Arial, sans-serif,
+  "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 $font-family-base: $font-family-sans-serif;
 
 $font-size-base: 1rem; // Assumes the browser default, typically `16px`
 $font-size-lg: $font-size-base * 1.25;
-$font-size-sm: $font-size-base * .875;
+$font-size-sm: $font-size-base * 0.875;
 
 $font-weight-light: 300;
 $font-weight-normal: 400;
@@ -50,7 +58,6 @@ $h2-font-size: $font-size-base * 2;
 $h3-font-size: $font-size-base * 1.75;
 
 $headings-font-weight: $font-weight-bolder;
-
 
 // Header
 //

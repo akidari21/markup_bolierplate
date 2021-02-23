@@ -15,13 +15,13 @@ const devServerConfiguration = {
 module.exports = function (env, args) {
 
   return {
-    entry: './src/index.js',
+    entry: "./src/index.js",
     output: {
-      path: path.resolve(__dirname, 'dist'),
-      filename: './js/index.bundle.js',
+      path: path.resolve(__dirname, "dist"),
+      filename: "./js/index.bundle.js",
     },
     // Generate sourcemaps for proper error messages
-    devtool: 'source-map',
+    devtool: "source-map",
     performance: {
       // Turn off size warnings for entry points
       hints: false,
@@ -33,12 +33,12 @@ module.exports = function (env, args) {
           use: {
             loader: "html-srcsets-loader",
             options: {
-              attrs: [":src", ':srcset'],
+              attrs: [":src", ":srcset"],
               interpolate: true,
               minimize: false,
               removeComments: false,
-            }
-          }
+            },
+          },
         },
         {
           test: /\.(sa|sc|c)ss$/,
@@ -46,52 +46,52 @@ module.exports = function (env, args) {
             {
               loader: MiniCssExtractPlugin.loader,
               options: {
-                publicPath: '../',
-              }
+                publicPath: "../",
+              },
             },
             {
-              loader: 'css-loader',
+              loader: "css-loader",
               options: {
                 importLoaders: 2,
-                sourceMap: true
-              }
+                sourceMap: true,
+              },
             },
             {
-              loader: 'resolve-url-loader',
+              loader: "resolve-url-loader",
             },
             {
-              loader: 'postcss-loader',
+              loader: "postcss-loader",
               options: {
                 postcssOptions: {
                   plugins: {
-                    'autoprefixer': {},
+                    autoprefixer: {},
                   },
                 },
-                sourceMap: true
-              }
+                sourceMap: true,
+              },
             },
             {
-              loader: 'sass-loader',
+              loader: "sass-loader",
               options: {
                 sourceMap: true,
-              }
+              },
             },
           ],
         },
         {
           test: /\.(js)$/,
-          loader: 'babel-loader',
+          loader: "babel-loader",
         },
         {
-          enforce: 'pre', // checked before being processed by babel-loader
+          enforce: "pre", // checked before being processed by babel-loader
           test: /\.(js)$/,
-          loader: 'eslint-loader',
+          loader: "eslint-loader",
         },
         {
           test: /\.(png|svg|jpe?g|gif)$/,
           use: [
             {
-              loader: 'file-loader',
+              loader: "file-loader",
               options: {
                 name: "[name].[ext]",
                 outputPath: "images",
@@ -99,30 +99,30 @@ module.exports = function (env, args) {
               },
             },
             {
-              loader: 'image-webpack-loader',
+              loader: "image-webpack-loader",
               options: {
-                disable: process.env.NODE_ENV !== 'production', // Disable during development
+                disable: process.env.NODE_ENV !== "production", // Disable during development
                 mozjpeg: {
                   progressive: true,
-                  quality: 75
+                  quality: 75,
                 },
               },
-            }
+            },
           ],
         },
         {
           test: /(favicon\.ico|site\.webmanifest|browserconfig\.xml|robots\.txt|humans\.txt)$/,
-          loader: 'file-loader',
+          loader: "file-loader",
           options: {
-            name: '[name].[ext]',
+            name: "[name].[ext]",
           },
         },
         {
           test: /\.(woff(2)?|ttf|eot)(\?[a-z0-9=.]+)?$/,
-          loader: 'file-loader',
+          loader: "file-loader",
           options: {
-            outputPath: 'fonts',
-            name: '[name].[ext]',
+            outputPath: "fonts",
+            name: "[name].[ext]",
             limit: 10000, // if less than 100 kb, add base64 encoded image to css
           },
         },
@@ -130,7 +130,7 @@ module.exports = function (env, args) {
     },
     plugins: [
       // sync html files dynamically
-      ...glob.sync('src/html/**/*.html').map(fileName => {
+      ...glob.sync("src/html/**/*.html").map((fileName) => {
         return new HtmlWebpackPlugin({
           template: fileName,
           minify: false, // Disable minification during production mode
@@ -140,19 +140,19 @@ module.exports = function (env, args) {
       }),
       new BrowserSyncPlugin({
         ...devServerConfiguration,
-        files: ['src/*'],
+        files: ["src/*"],
         ghostMode: {
           location: false,
         },
         injectChanges: true,
         logFileChanges: true,
-        notify: true,
+        notify: false,
         reloadDelay: 0,
       }),
       new MiniCssExtractPlugin({
-        filename: './css/styles.css'
+        filename: "./css/styles.css",
       }),
-    ]
-  }
+    ],
+  };
 }
 

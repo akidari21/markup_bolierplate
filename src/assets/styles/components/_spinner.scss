@@ -1,0 +1,36 @@
+// SVG Animation loading spinner (DataURI 방식)
+// SVG 미지원 브라우저 환경일 경우, 호환 plugin, pollyfill 사용 
+
+.spinner-container {
+  position: fixed;
+  z-index: 1090;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+// svg spinner
+.svg-spinner {
+  position: relative;
+  &:after {
+    content: '';
+    position: absolute;
+    z-index: 1;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    display: block;
+    width: 50px;
+    height: 50px;
+    // stroke: hsl(210, 70%, 75%);
+    stroke: hsl(0, 0%, 69%);
+    /* Data-URI 로 변환한 svg,css animation으로 배경이미지 적용 */
+    background-image: url('data:image/svg+xml,%3Csvg class="spinner" width="50" height="50" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg"%3E%3Cstyle type="text/css"%3E .spinner %7B animation: rotate 2s linear infinite; z-index: 2; position: absolute; top: 50%25; left: 50%25; margin: -25px 0 0 -25px; width: 50px; height: 50px; %7D .spinner .path %7B stroke: hsl(0, 0%25, 69%25); stroke-linecap: round; animation: dash 1.5s ease-in-out infinite; %7D @keyframes rotate %7B 100%25 %7B transform: rotate(360deg); %7D %7D @keyframes dash %7B 0%25 %7B stroke-dasharray: 1, 150; stroke-dashoffset: 0; %7D 50%25 %7B stroke-dasharray: 90, 150; stroke-dashoffset: -35; %7D 100%25 %7B stroke-dasharray: 90, 150; stroke-dashoffset: -124; %7D %7D %3C/style%3E%3Ccircle class="path" cx="25" cy="25" r="20" fill="none" stroke-width="5"%3E%3C/circle%3E%3C/svg%3E');
+    background-repeat: no-repeat;
+  }
+}
