@@ -5,6 +5,7 @@
 // Colors
 //
 $steel: #333;
+$dark: #333;
 $silver: #ccc;
 $pale-grey: #333;
 $cool-grey: #333;
@@ -29,22 +30,22 @@ $success: $green !default;
 $danger: $red !default;
 $warning: $yellow !default;
 $info: $cyan !default;
-$light: material-color("grey", "50") !default;
-$dark: material-color("grey", "800") !default;
+// $light: material-color("grey", "50") !default;
+// $dark: material-color("grey", "800") !default;
 
 // Body
 //
-$body-bg: $light;
-$body-color: material-color("blue-grey", "900");
+$body-bg: $white;
+// $body-color: material-color("blue-grey", "900");
 
 // Typography
 //
 
-$font-family-sans-serif: Roboto, "Helvetica Neue", Arial, sans-serif,
+$font-family-sans-serif: 'Noto Sans KR', Roboto, "Helvetica Neue", Arial, sans-serif,
   "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 $font-family-base: $font-family-sans-serif;
 
-$font-size-base: 1rem; // Assumes the browser default, typically `16px`
+$font-size-base: 0.875rem; // Assumes the browser default, typically `16px`
 $font-size-lg: $font-size-base * 1.25;
 $font-size-sm: $font-size-base * 0.875;
 
@@ -63,3 +64,29 @@ $headings-font-weight: $font-weight-bolder;
 //
 
 $header-bg: $body-bg;
+
+// 2. Custom form control
+$custom-control-indicator-size: 1.143rem;
+$custom-control-indicator-border-color: $dark;
+$custom-control-indicator-border-width: 0.125rem;
+$custom-control-indicator-checked-color: $white;
+$custom-control-indicator-checked-bg: $primary;
+$custom-control-indicator-checked-border-color: $primary;
+$custom-forms-transition: background-color 0.15s ease-in-out, border-color 0.15s
+    ease-in-out, box-shadow 0.15s ease-in-out, background-size 5s ease-in-out;
+
+// 3. Checkbox
+$custom-checkbox-indicator-border-radius: 0.125rem;
+$custom-checkbox-indicator-icon-checked: str-replace(
+  url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' %3e%3cpath fill='#{$custom-control-indicator-checked-color}' d='M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z'/%3e%3c/svg%3e"),
+  "#", "%23");
+
+  // str-replace%28url%28"data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' %3e%3cpath fill='%23ffffff' d='M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z'/%3e%3c/svg%3e"%29, "%23", "%23"%29
+  
+  // url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' %3e%3cpath fill='%23ffffff' d='M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z'/%3e%3c/svg%3e")
+
+// 4. Radio
+// 4.1 new variables
+$custom-radio-indicator-icon-checked-color: $primary;
+$custom-radio-checked-background-color: $white;
+$custom-radio-indicator-icon-checked: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'><circle r='3' fill='#{$custom-radio-indicator-icon-checked-color}'/></svg>");

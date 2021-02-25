@@ -6,17 +6,20 @@
 @import "~sass-material-colors";
 @import "~normalize-scss";
 
+$grid-columns: 16 !default;
+$grid-gutter-width: 30px !default;
+
 // Abstracts
 // - tools and helpers
-@import "abstracts/variables";
 @import "abstracts/functions";
+@import "abstracts/variables";
 @import "abstracts/mixins";
 @import "abstracts/animations";
 
 // Vendors
 // - CSS from external libraries and frameworks
 @import "vendors/fontawesome";
-@import "vendors/googlefonts";
+// @import "vendors/googlefonts";
 @import "vendors/bootstrap";
 
 // Base
@@ -36,6 +39,9 @@
 @import "components/spinner";
 @import "components/switch";
 @import "components/tagify";
+@import "components/forms";
+@import "components/starrate";
+@import "components/video";
 
 // Layout
 // - everything that takes part in laying out the site/application
