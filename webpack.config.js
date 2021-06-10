@@ -3,6 +3,11 @@ const glob = require("glob");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+
+// spritesmith
+const SpritesmithPlugin = require('webpack-spritesmith');
+const MobileSpritesmithPlugin = require('webpack-spritesmith');
+
 // dev server configuration
 const devServerConfiguration = {
   server: {
@@ -152,6 +157,33 @@ module.exports = function (env, args) {
       new MiniCssExtractPlugin({
         filename: "./css/styles.css",
       }),
+      new SpritesmithPlugin({
+        src: {
+          cwd: path.resolve(__dirname, 'src/assets/images', 'images', 'web'),
+          glob: '*.png'
+        },
+        target: {
+          image: path.resolve(__dirname, 'src/images/sprite-web.png'),
+          css: path.resolve(__dirname, 'src/sprite-scss/sprite-web.scss')
+        },
+        apiOptions: {
+          cssImageRef: "../images/sprite-web.png"
+        }
+      }),
+      new MobileSpritesmithPlugin({
+        src: {
+          cwd: path.resolve(__dirname, 'src/assets/images', 'images', 'mobile'),
+          glob: '*.png'
+        },
+        target: {
+          image: path.resolve(__dirname, 'src/images/sprite-mobile.png'),
+          css: path.resolve(__dirname, 'src/sprite-scss/sprite-mobile.scss')
+        },
+        apiOptions: {
+          cssImageRef: "../images/sprite-mobile.png"
+        }
+      }),
+      
     ],
   };
 }
