@@ -3,10 +3,17 @@ const glob = require("glob");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const PurgecssPlugin = require('purgecss-webpack-plugin');
+
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 // spritesmith
 const SpritesmithPlugin = require('webpack-spritesmith');
 const MobileSpritesmithPlugin = require('webpack-spritesmith');
+
+const PATHS = {
+  src: path.join(__dirname, "src"),
+};
 
 // dev server configuration
 const devServerConfiguration = {
@@ -183,7 +190,10 @@ module.exports = function (env, args) {
           cssImageRef: "../images/sprite-mobile.png"
         }
       }),
-      
+      new PurgecssPlugin({
+        paths: glob.sync(`${PATHS.src}/**/*`, { nodir: true }),
+      }),
+      new CleanwebpackPlugin(),
     ],
   };
 }
