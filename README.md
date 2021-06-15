@@ -1,55 +1,26 @@
-# FRONTEND BOILERPLATE
-
-[![Bootstrap](https://flat.badgen.net/badge/bootstrap/4.5.0/7952b3)](https://getbootstrap.com)
-[![Bootstrap](https://flat.badgen.net/badge/fontawesome/4.7.0/1152b3)](https://getbootstrap.com)
-[![Bootstrap](https://flat.badgen.net/badge/jQuery/3.5.1/3152b3)](https://getbootstrap.com)
-[![Webpack](https://flat.badgen.net/badge/webpack/4/14aaf3)](https://webpack.js.org)
-[![license](https://flat.badgen.net/github/license/smarteist/Frontent-Starter-Boilerplate)](https://raw.githubusercontent.com/smarteist/Frontent-Starter-Boilerplate/master/LICENSE)
-
-This boilerplate uses [Webpack](https://webpack.js.org/) boundler and its dev server helps you build web apps and sites much faster.
-this project also uses [Bootstrap](https://getbootstrap.com/) , and a modern development workflow.
-
-## Features
+# UI 마크업(Sass) 스타터
 
 * **Live reloading** <br> browser update after changes
 * **Automatically optimization** entry files <br> concatenate, minify and inject output files to HTML
 * **[Sass](https://sass-lang.com/) for stylesheets** <br> with [the 7-1 Pattern](https://sass-guidelin.es/#the-7-1-pattern)
 * **[Webpack 4](https://webpack.js.org/)** a good configuration - module bundler
 * **[Bootstrap 4](http://getbootstrap.com/)** - the most popular HTML, CSS and JS framework
-* **[jQuery 3.4.1](http://jquery.com/)** - JavaScript library
-* **[Font Awesome 4.7](https://fontawesome.com/v4.7.0/icons/)** - the web's most popular vector icons and social logos
 
+#### 환경설치
 
-## Theme development
+1. Node.js 설치 (Y:/디지털채널 개편 프로젝트/1. 프로젝트_공통/14. 설치파일/Vue 개발환경).
+2. C:/scard/dev/ 하위에 자신의 작업폴더를 생성 후, cd [폴더명] 명령으로 이동
+3. 저장소에서 스타터 클론 받기 `git clone http://t-bitbucket.samsungcard.biz/scm/uiux/ui-pub.git .`
+4. 클론이 완료되면 `npm install` 명령으로 환경설치 
 
-[Node.js](http://nodejs.org/) and npm is required dependency to work with *this starter*.
-<br><br>
-You can optionally use [Yarn](https://yarnpkg.com/en/) package manager.
+#### 빌드 명령어
 
+* `npm run start` ─ 파일 저장시 assets을 포함한 변경사항을 실시간 반영하는 서버 시작.
+* `npm run watch` ─ 파일의 변경사항을 감지 실시간 반영.
+* `npm run build` ─ assets 하위 파일들을 포함 컴파일(최적화) 진행 후 /dist 폴더에 결과 파일을 생성.
+* `npm run clean` ─ 이전 버전 빌드 /dist 폴더 제거 (사용하지 않음)
 
-#### Installation
-
-1. Install [Node.js](http://nodejs.org/) (installation depends on operation system).
-([npm is distributed with Node.js](https://www.npmjs.com/get-npm)).
-2. It is recommended to install the latest version of yarn. [How to install yarn?](https://yarnpkg.com/en/docs/install)
-3. Clone the repo using `git clone https://github.com/smarteist/Frontent-Starter-Boilerplate.git`.
-4. Open project folder and run `npm install` command or if you installed yarn `yarn`. 
-
-Its Done.
-
-#### Build commands
-
-* `yarn start` or `npm run start` ─ compile assets when file changes are made, start [webpack-dev-server](https://github.com/webpack/webpack-dev-server) session
-* `yarn watch` or `npm run watch` ─ webpack can watch files and recompile whenever they change.
-* `yarn build` or `npm run build` ─ compile and optimize (the files in your assets directory) for production.
-* `yarn clean` or `npm run clean` ─ cleanup previous build files in /dist folder.
-
-## License
-
-Code released under the [MIT license](https://raw.githubusercontent.com/smarteist/Frontent-Starter-Boilerplate/master/LICENSE).
-## Structure
-
-Shorten directories and files structure which you'll see after build: 
+#### 폴더 구조
 
 ```shell
 ▼ project/
@@ -90,6 +61,3 @@ Shorten directories and files structure which you'll see after build:
 └── [...]                  # other files
 ```
 
-## License
-
-Code released under the [MIT license](https://raw.githubusercontent.com/smarteist/Frontent-Starter-Boilerplate/master/LICENSE).
