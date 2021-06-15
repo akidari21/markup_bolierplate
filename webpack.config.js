@@ -108,18 +108,19 @@ module.exports = function (env, args) {
                 name: "[name].[ext]",
                 outputPath: "images",
                 esModule: false,
+                emitFile: true,
               },
             },
-            {
-              loader: "image-webpack-loader",
-              options: {
-                disable: process.env.NODE_ENV !== "production", // Disable during development
-                mozjpeg: {
-                  progressive: true,
-                  quality: 75,
-                },
-              },
-            },
+//             {
+//               loader: "image-webpack-loader",
+//               options: {
+//                 disable: process.env.NODE_ENV !== "production", // Disable during development
+//                 mozjpeg: {
+//                   progressive: true,
+//                   quality: 75,
+//                 },
+//               },
+//             },
           ],
         },
         {
@@ -136,6 +137,8 @@ module.exports = function (env, args) {
             outputPath: "fonts",
             name: "[name].[ext]",
             limit: 10000, // if less than 100 kb, add base64 encoded image to css
+            esModule: false,
+            emitFile: true,
           },
         },
       ],
