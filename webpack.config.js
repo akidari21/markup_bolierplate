@@ -105,10 +105,10 @@ module.exports = function (env, args) {
             {
               loader: "file-loader",
               options: {
-                name: "[name].[ext]",
+                name: "[name].[ext]?[hash]",
                 outputPath: "images",
                 esModule: false,
-                emitFile: true,
+                // emitFile: true, // 주석 해제시 파일을 dist에 복사하지 않음
               },
             },
 //             {
@@ -136,9 +136,9 @@ module.exports = function (env, args) {
           options: {
             outputPath: "fonts",
             name: "[name].[ext]",
-            limit: 10000, // if less than 100 kb, add base64 encoded image to css
+            limit: 10000, // 100 kb 이하 파일은 base64 인코딩 코드로 css에 적용
             esModule: false,
-            emitFile: true,
+            // emitFile: true, // 주석 해제시 파일을 dist에 복사하지 않음
           },
         },
       ],
@@ -196,7 +196,7 @@ module.exports = function (env, args) {
       new PurgecssPlugin({
         paths: glob.sync(`${PATHS.src}/**/*`, { nodir: true }),
       }),
-      new CleanwebpackPlugin(),
+      new CleanWebpackPlugin(),
     ],
   };
 }

@@ -3,7 +3,7 @@
 
 // Essential Vendors
 // - external libraries that should be loaded before
-@import "~sass-material-colors";
+// @import "~sass-material-colors";
 @import "~normalize-scss";
 
 $grid-columns: 16 !default;
@@ -18,7 +18,7 @@ $grid-gutter-width: 30px !default;
 
 // Vendors
 // - CSS from external libraries and frameworks
-@import "vendors/fontawesome";
+// @import "vendors/fontawesome";
 // @import "vendors/googlefonts";
 @import "vendors/bootstrap";
 
