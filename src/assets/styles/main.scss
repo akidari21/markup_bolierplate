@@ -19,7 +19,7 @@ $grid-gutter-width: 30px !default;
 // Vendors
 // - CSS from external libraries and frameworks
 // @import "vendors/fontawesome";
-// @import "vendors/googlefonts";
+@import "vendors/googlefonts";
 @import "vendors/bootstrap";
 
 // Base
@@ -55,3 +55,6 @@ $grid-gutter-width: 30px !default;
 // Themes
 // - for different aspects
 @import "themes/default";
+
+// UI Guide - 0620 chaney
+@import "ui_guide/common.scss"
