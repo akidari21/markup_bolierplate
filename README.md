@@ -10,7 +10,7 @@
 
 1. Node.js 설치 (Y:/디지털채널 개편 프로젝트/1. 프로젝트_공통/14. 설치파일/Vue 개발환경).
 2. C:/scard/dev/ 하위에 자신의 작업폴더를 생성 후, cd [폴더명] 명령으로 이동
-3. 저장소에서 스타터 클론 받기 `git clone http://t-bitbucket.samsungcard.biz/scm/uiux/ui-pub.git .`
+3. 저장소에서 스타터 클론 받기 `git clone http://xxxxxxxxxxxx/ui-pub.git .`
 4. 클론이 완료되면 `npm install` 명령으로 환경설치 
 
 #### 빌드 명령어
